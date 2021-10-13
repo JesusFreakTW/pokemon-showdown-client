@@ -1637,8 +1637,10 @@ dragonrage:1140,sonicboom:1120,superfang:1350,endeavor:1399,sheercold:1501,
 fissure:1500,horndrill:1500,guillotine:1500};
 
 return results.sort(function(_ref20,_ref21){var rowType1=_ref20[0],id1=_ref20[1];var rowType2=_ref21[0],id2=_ref21[1];
-var modPow1=_this6.mod?BattleTeambuilderTable[_this6.mod].overrideBP[id1]:null;
-var modPow2=_this6.mod?BattleTeambuilderTable[_this6.mod].overrideBP[id2]:null;
+if (_this6.mod !== '') {
+var modPow1=BattleTeambuilderTable?.[_this6.mod].overrideMoveInfo[id1]?.basePower;
+var modPow2=BattleTeambuilderTable?.[_this6.mod].overrideMoveInfo[id2]?.basePower;
+}
 var move1=BattleMovedex[id1];
 var move2=BattleMovedex[id2];
 var pow1=modPow1||move1.basePower||powerTable[id1]||(move1.category==='Status'?-1:1400);
@@ -1647,8 +1649,10 @@ return pow2-pow1;
 });
 case'accuracy':
 return results.sort(function(_ref22,_ref23){var rowType1=_ref22[0],id1=_ref22[1];var rowType2=_ref23[0],id2=_ref23[1];
-var modAcc1=_this6.mod?BattleTeambuilderTable[_this6.mod].overrideAcc[id1]:null;
-var modAcc2=_this6.mod?BattleTeambuilderTable[_this6.mod].overrideAcc[id2]:null;
+if (_this6.mod !== '') {
+var modAcc1=BattleTeambuilderTable?.[_this6.mod].overrideMoveInfo[id1]?.accuracy;
+var modAcc2=BattleTeambuilderTable?.[_this6.mod].overrideMoveInfo[id2]?.accuracy;
+}
 var accuracy1=modAcc1||BattleMovedex[id1].accuracy||0;
 var accuracy2=modAcc2||BattleMovedex[id2].accuracy||0;
 if(accuracy1===true)accuracy1=101;
@@ -1657,8 +1661,10 @@ return accuracy2-accuracy1;
 });
 case'pp':
 return results.sort(function(_ref24,_ref25){var rowType1=_ref24[0],id1=_ref24[1];var rowType2=_ref25[0],id2=_ref25[1];
-var modPP1=_this6.mod?BattleTeambuilderTable[_this6.mod].overridePP[id1]:null;
-var modPP2=_this6.mod?BattleTeambuilderTable[_this6.mod].overridePP[id2]:null;
+if (_this6.mod !== '') {
+var modPP1=BattleTeambuilderTable?.[_this6.mod].overrideMoveInfo[id1]?.pp;
+var modPP2=BattleTeambuilderTable?.[_this6.mod].overrideMoveInfo[id2]?.pp;
+}
 var pp1=modPP1||BattleMovedex[id1].pp||0;
 var pp2=modPP2||BattleMovedex[id2].pp||0;
 return pp2-pp1;

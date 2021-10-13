@@ -29,3 +29,16 @@ package-lock.json
 /website/.pages-cached/
 /website/files/
 /website/images/
+.vs/pokemon-showdown-client/v16/.suo
+.vs/ProjectSettings.json
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json
+.vscode/launch.json
+data/pokemon-showdown
+data/search-index.js
+data/teambuilder-tables.js
+js/battle-dex.js
+js/battledata.js
+preactalpha.html
+replays/theme/wrapper.inc.php
+config/config.js
